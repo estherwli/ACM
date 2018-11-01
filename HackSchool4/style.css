@@ -5,27 +5,67 @@ html {
 body {
 	background-color: black;
 	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 h1 {
+	position: absolute;
 	color: white;
 	font-family: 'Comic Sans MS';
 }
 img {
 	height: 100px;
+	width: 100px;
+	animation: dance 1s linear infinite;
 }
 .ghost-container { /* classes start with a '.' */
-	border: solid 2px blue;
+	/* border: solid 2px blue; */
 	height: 300px;
 	display: flex;
 	/* flex-direction: column;  changes main axis from horizontal (default) to vertical */
-	justify-content: space-around; /* moves along main axis */
-	align-items: center; /* moves along cross axis */
+	justify-content: space-around; 
+	align-items: center; 
+	flex: 0 0 50%;
 }
 .down { /* creates new classes */
 	align-self: flex-end; /* overwrites parent properties; moves individual item along cross axis */
+	animation-delay: 0.5s;
 }
 .up {
 	align-self: flex-start;
+}
+
+/*
+
+justify-content: aligns items along main axis
+	flex-start, flex-end, center, space-between, space-around
+align-items: aligns items along cross axis
+	flex-start, flex-end, center, baseline, stretch (items are stretched to fit container)
+flex-direction: defines direction of main axis
+	row, row-reverse, column, column-reverse
+order: specifies order of flex item
+	integer
+align-self: aligns an item along cross axis, overwrites align-items
+	flex-start, flex-end, center, baseline, stretch 
+flex-wrap: specifies whether items are forced onto a single line
+	nowrap (single line), wrap (additional lines), wrap-reverse (additional lines in reverse)
+flex-flow: shorthand for <flex-direction> and <flex-wrap>
+	ex. row wrap, column nowrap
+align-content: determines spacing between lines (no effect if there's only one line)
+	flex-start, flex-end, center, space-between, space-around, stretch 
+
+*/
+
+@media (max-width: 1000px) { /* allows everything to fit on screen when screen is small */
+	.ghost-container {
+		flex: 0 0 100%;
+	}
+}
+
+@keyframes dance {
+	0% {transform: rotate(7deg);}
+	50% {transform: rotate(-7deg);}
+	100% {transform: rotate(7deg);}
 }
 
