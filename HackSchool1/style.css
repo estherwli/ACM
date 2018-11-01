@@ -1,0 +1,59 @@
+h1 {
+	font-size: 72px;
+	font-family: 'Comic Sans MS';
+	/* the following are some text-related properties */
+	  text-align: center;
+	  font-weight: bold;
+}
+
+img {
+	height: 300px;
+	border-radius: 50% 20% / 10% 40%;
+}
+
+/*
+all html tags have the attributes class and id
+class and id can be used by CSS code to target the element to add style to
+id style supercedes class style
+*/
+
+.noot { /* defines class noot; references class with . */
+	color: green;
+}
+
+#last { /* defines id last; references id with # */
+	color: purple;
+}
+
+@keyframes fire {
+	0% {color: red; transform: translate(100px, 0px);}
+	50% {color: yellow; transform: translate(0px, 0px);}
+	100% {color: red; transform: translate(100px, 0px);}
+}
+
+#last {
+	animation: blueRainbow 6s ease infinite;
+}
+
+@keyframes blueRainbow {
+	0% {color: cyan; transform: translate(100px, 0px);}
+	25% {color: navy; transform: translate(0px, 0px);}
+	50% {color: pink; transform: translate(100px, 0px);}
+	75% {color: violet; transform: translate(0px, 0px);}
+	100% {color: cyan; transform: translate(100px, 0px);}
+}
+
+#second {
+	animation: fire 4s ease infinite;
+}
+
+@keyframes shake {
+	0% {color: green; transform: translate(0px, 20px);}
+	50% {color: brown; transform: translate(0px, 0px);}
+	100% {color: green; transform: translate(0px, 20px);}
+}
+
+#first {
+	animation: shake .5s ease infinite;
+}
+

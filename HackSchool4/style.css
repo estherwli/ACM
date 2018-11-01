@@ -1,0 +1,31 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-color: black;
+	height: 100%;
+}
+
+h1 {
+	color: white;
+	font-family: 'Comic Sans MS';
+}
+img {
+	height: 100px;
+}
+.ghost-container { /* classes start with a '.' */
+	border: solid 2px blue;
+	height: 300px;
+	display: flex;
+	/* flex-direction: column;  changes main axis from horizontal (default) to vertical */
+	justify-content: space-around; /* moves along main axis */
+	align-items: center; /* moves along cross axis */
+}
+.down { /* creates new classes */
+	align-self: flex-end; /* overwrites parent properties; moves individual item along cross axis */
+}
+.up {
+	align-self: flex-start;
+}
+
